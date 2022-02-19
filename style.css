@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #f1f3f6;
+}
+.form{
+    height: 350px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: inset 0 0 15px rgb(55 84 170 / 0%), inset 0 0 20px rgb(255 255 255 / 0%), 7px 7px 15px rgb(55 84 170 / 15%), -7px -7px 20px white, inset 0px 0px 4px rgb(255 255 255 / 20%);
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+input{
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 100px;
+    background: transparent;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+    padding: 15px 20px;
+}
+input:invalid{
+    color: #f00;
+}
+input:valid{
+    color: #333;
+}
+input:invalid + button,
+input:invalid ~ button{
+    cursor: not-allowed;
+}
+input:invalid + button:active,
+input:invalid ~ button:active{
+    box-shadow: inset 0 0 15px rgb(55 84 170 / 0%), inset 0 0 20px rgb(255 255 255 / 0%), 7px 7px 15px rgb(55 84 170 / 15%), -7px -7px 20px white, inset 0px 0px 4px rgb(255 255 255 / 20%);
+}
+button:active{
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+button{
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-top: 120px;
+    box-shadow: inset 0 0 15px rgb(55 84 170 / 0%), inset 0 0 20px rgb(255 255 255 / 0%), 7px 7px 15px rgb(55 84 170 / 15%), -7px -7px 20px white, inset 0px 0px 4px rgb(255 255 255 / 20%);
+    padding: 10px 20px;
+}
+.valid{
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    width: 90px;
+    background: #f00;
+    height: 90px;
+}
+.valid::before{
+    content: 'X';
+    font-size: 2em;
+    color: #fff;
+    font-weight: 500;
+    user-select: none;
+}
+input:valid + .valid,
+input:valid ~ .valid{
+    background: limegreen;
+}
+input:valid + .valid::before,
+input:valid ~ .valid::before{
+    content: '✔';
+}
